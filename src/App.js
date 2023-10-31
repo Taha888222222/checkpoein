@@ -14,20 +14,20 @@ class App extends Component {
       },
       shows: false,
       lastMountedTime: null,
-      timer: 0, // Initialize the timer
+      timer: 0, 
     };
   }
 
   toggleShows = () => {
     if (this.state.shows) {
-      this.stopTimer(); // Stop the timer when hiding the profile
+      this.stopTimer(); 
       this.setState({
-        timer: 0, // Reset the timer to 0
-        lastMountedTime: null, // Reset the last mounted time to null
+        timer: 0, 
+        lastMountedTime: null, 
       });
     } else {
-      this.startTimer(); // Start the timer when showing the profile
-      this.updateMountedTime(); // Update the last mounted time when showing the profile
+      this.startTimer(); 
+      this.updateMountedTime();
     }
   
     this.setState((prevState) => ({
@@ -48,16 +48,16 @@ class App extends Component {
       this.setState((prevState) => ({
         timer: prevState.timer + 1,
       }));
-    }, 1000); // Update the timer every second
+    }, 1000); 
   }
 
   stopTimer() {
-    clearInterval(this.timerInterval); // Clear the timer interval when hiding the profile
+    clearInterval(this.timerInterval); 
   }
 
   render() {
     const { fullName, bio, imgSrc, profession } = this.state.person;
-    const { shows, lastMountedTime, timer } = this.state;
+    const { shows, lastMountedTime,  } = this.state;
 
     return (
       <div>
